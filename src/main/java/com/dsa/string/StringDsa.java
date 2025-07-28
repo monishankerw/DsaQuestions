@@ -1141,6 +1141,45 @@ public class StringDsa {
 	•	Space Complexity: O(k) where k is the size of the HashSet, bounded by the number of unique characters.
 
          */
+            /**
+
+             * 🧠 Step-by-Step Execution for "abcabcaa"
+             *
+             * Input:  "a b c a b c a a"
+             * Index:   0 1 2 3 4 5 6 7
+             *
+             * Initialize:
+             * 	•	left = 0, maxLength = 0, set = {}
+             *
+             * right	char	Action	set	left	maxLength
+             * 0	a	Not in set → add to set	{a}	0	1
+             * 1	b	Not in set → add	{a, b}	0	2
+             * 2	c	Not in set → add	{a, b, c}	0	3
+             * 3	a	In set → remove ‘a’, increment left to 1, add ‘a’	{b, c, a}	1	3
+             * 4	b	In set → remove ‘b’, left=2, add ‘b’	{c, a, b}	2	3
+             * 5	c	In set → remove ‘c’, left=3, add ‘c’	{a, b, c}	3	3
+             * 6	a	In set → remove ‘a’, left=4, add ‘a’	{b, c, a}	4	3
+             * 7	a	In set → remove ‘b’, ‘c’, ‘a’, left=7, add ‘a’	{a}	7	3
+             *
+             * Final maxLength = 3
+             *
+             * ⸻
+             *
+             * ✅ Output
+             *
+             * Longest substring without repeating characters: 3
+             * Substrings: "abc", "bca", "cab"
+             *
+             *
+             * ⸻
+             *
+             * ✅ Time and Space Complexity
+             *
+             * Metric	Value
+             * Time Complexity	O(n) — each character is visited at most twice
+             * Space Complexity	O(k) — where k is the character set size (26 if lowercase only)
+             *
+             */
             Integer result=longestSubstring(str);
             System.out.println("Output:"+result);
         }
