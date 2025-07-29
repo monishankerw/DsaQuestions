@@ -111,6 +111,7 @@ public class StringDsa {
                 System.out.println("Character array: " + Arrays.toString(charArray));
             }
         }
+
         public static class SortString {
             public static void main(String[] args) {
                 String str = "manishankar";
@@ -811,6 +812,7 @@ public class StringDsa {
         }
 
     }
+
     // Longest substring without repeating characters
     // 12. Longest substring without repeating characters
     public static int lengthOfLongestSubstrings(String s) {
@@ -865,6 +867,7 @@ public class StringDsa {
             return maxLen;
         }
     }
+
     // 14. Find common characters between two strings
     public static List<Character> commonChars(String s1, String s2) {
         Set<Character> set1 = new HashSet<>();
@@ -874,6 +877,7 @@ public class StringDsa {
             if (set1.contains(c)) common.add(c);
         return new ArrayList<>(common);
     }
+
     public static class Permutations {
         public static void main(String[] args) {
             System.out.println("13. Can permute palindrome: " + canPermutePalindrome("carerac"));
@@ -1006,6 +1010,7 @@ public class StringDsa {
             }
         }
     }
+
     // 13. Check if string can be palindrome permutation
     public static boolean canPermutePalindrome(String s) {
         Set<Character> set = new HashSet<>();
@@ -1051,6 +1056,7 @@ public class StringDsa {
                     .forEach(entry -> System.out.print(entry.getKey() + " "));
         }
     }
+
     public static class RemoveDuplicate {
         public static void main(String[] args) {
             String str = "aadfgrr";
@@ -1124,9 +1130,10 @@ public class StringDsa {
                     .forEach(entry -> System.out.println(entry.getKey() + ": " + entry.getValue()));
         }
     }
+
     public static class LongestSubstring {
         public static void main(String[] args) {
-            String str="abcabcaa";
+            String str = "abcabcaa";
         /*
         	1.	Sliding Window Technique:
 	•	Maintain a sliding window (left and right pointers) to keep track of the current substring.
@@ -1142,7 +1149,6 @@ public class StringDsa {
 
          */
             /**
-
              * 🧠 Step-by-Step Execution for "abcabcaa"
              *
              * Input:  "a b c a b c a a"
@@ -1180,17 +1186,17 @@ public class StringDsa {
              * Space Complexity	O(k) — where k is the character set size (26 if lowercase only)
              *
              */
-            Integer result=longestSubstring(str);
-            System.out.println("Output:"+result);
+            Integer result = longestSubstring(str);
+            System.out.println("Output:" + result);
         }
 
         private static int longestSubstring(String str) {
             //sliding window technique
             HashSet<Object> set = new HashSet<>();
-            int maxLength=0;
-            int left=0;
-            for (int right=0;right<str.length();right++){
-                while (set.contains(str.charAt(right))){
+            int maxLength = 0;
+            int left = 0;
+            for (int right = 0; right < str.length(); right++) {
+                while (set.contains(str.charAt(right))) {
                     set.remove(str.charAt(left));
                     left++;
                 }
@@ -1200,5 +1206,5 @@ public class StringDsa {
             return maxLength;
 
         }
-}
+    }
 }
