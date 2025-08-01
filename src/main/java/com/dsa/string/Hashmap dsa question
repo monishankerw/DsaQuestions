@@ -1,0 +1,89 @@
+Here’s a curated Markdown list of popular LeetCode problems involving HashMap, especially centered around frequency counting, mapping, or occurrence-based logic. Each entry links to the problem and includes a brief description.
+
+
+---
+
+📘 LeetCode HashMap Problems
+
+🔁 Frequency / Counting Related
+
+Two Sum — Find two numbers that add up to a target. Use HashMap to store seen values and indices  
+
+Contains Duplicate — (Not explicitly found, but standard) Check if any number appears more than once.
+
+Single Number — (Warm-up) Find the number that appears only once when others appear twice.
+
+Top K Frequent Elements (LC 347) — Return the k most frequent elements using HashMap + heap or buckets.
+
+Frequency of the Most Frequent Element (LC 1838) — Maximum frequency over operations to increase elements  
+
+Count Elements With Maximum Frequency (LC 3005) — Count how many elements have maximum occurrence in the array  
+
+Unique Number of Occurrences (LC 1207) — Determine if each value’s frequency is unique (HashMap + Set).
+
+
+📦 Majority / Threshold Based
+
+Majority Element (LC 169) — Find element that appears more than ⌊n/2⌋ times.
+
+Majority Element II (LC 229) — Find all elements appearing more than ⌊n/3⌋ times.
+
+
+🧬 String / Character Mapping & Frequency
+
+Valid Anagram (LC 242) — Check if two strings are anagrams using frequency maps.
+
+Ransom Note (LC 383) — Check if ransom note can be formed from magazine using character counts.
+
+Sort Characters By Frequency (LC 451) — Sort letters by descending frequency.
+
+First Unique Character in a String (LC 387) — Find the first non-repeating character using counts.
+
+Group Anagrams (LC 49) — Group words with same sorted signature or frequency signature.
+
+Find All Anagrams in a String (LC 438) — Sliding window + character count.
+
+
+🧮 Subarray / Prefix-Sum Logic
+
+Subarray Sum Equals K (LC 560) — Count continuous subarrays summing to k using prefix sum and HashMap  
+
+Degree of an Array (LC 697) — Find shortest subarray with same degree as original array using first/last indices and count  
+
+
+🚀 Graph- or DFS‑Based with HashMaps
+
+Evaluate Division (LC 399) — Given variable ratios, answer queries using graph and HashMap adjacency lists + DFS/BFS  
+
+Employee Importance (LC 690) — Sum importance of employee and subordinates using HashMap for ID → object mapping  
+
+
+📱 Data Structure Design Using HashMaps
+
+Design HashMap (LC 706) — Implement your own MyHashMap without built-in structures  
+
+LFU Cache (LC 460) — Implement Least-Frequently-Used cache using frequency map + linked lists or ordered map  
+
+
+
+---
+
+✔️ Example formatting for Markdown
+
+## 🧠 Majority Element II (LC 229)
+**Description**: Return all elements that appear more than ⌊n/3⌋ times in the array using HashMap frequency counting.
+
+**Solution (Java)**:
+```java
+Map<Integer, Integer> freq = new HashMap<>();
+for (int num : nums) { freq.put(num, freq.getOrDefault(num, 0) + 1); }
+List<Integer> res = new ArrayList<>();
+for (var e : freq.entrySet()) {
+  if (e.getValue() > nums.length / 3) res.add(e.getKey());
+}
+return res;
+
+---
+
+Would you like me to expand this into full Java or Python solutions for each, or provide downloadable `.md` content? I can also tailor this to include difficulty tags or common usage patterns!31
+
